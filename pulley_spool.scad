@@ -30,11 +30,11 @@ module spool() {
     for (a = [0:120:359]) {
       rotate([0, 0, a]) translate([0, 4.5, width/2+3]) rotate([90, 0, 0]) {
 	cylinder(r=m3_wide_radius, h=radius+5, center=true, $fn=12);
-	//translate([0, 0, 1-radius]) cylinder(r=10, h=6, center=true);
-	/*for (z = [0:10]) {
-	  translate([0, z, 1.5]) rotate([0, 0, 30])
-	    cylinder(r=m3_nut_radius, h=5, center=true, $fn=6);
-	}*/
+	//3x ears translate([0, 0, 1-radius]) cylinder(r=10, h=6, center=true);
+	for (z = [0:10]) {
+	  translate([0, z, 0]) rotate([0, 0, 30])
+	    cylinder(r=m3_nut_radius, h=7, center=true, $fn=6);
+	}
       }
     }
   }
